@@ -15,9 +15,8 @@ import SwiftUI
     @Published var alertContent : AlertContent?
     @Published var showError : Bool = false
     
-    func getMeals(){
+    func getMeals() async{
         isLoading = true
-        Task{
             do {
                 meals = try await NetworkManager.shared.getDessertList()
                 isLoading = false
@@ -41,6 +40,5 @@ import SwiftUI
                 isLoading = false
                 showError = true
             }
-        }
     }
 }

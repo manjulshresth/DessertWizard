@@ -45,7 +45,7 @@ struct MealsListView: View {
             }
         }
         .task {
-            viewModel.getMeals()
+           await viewModel.getMeals()
         }
     }
 }

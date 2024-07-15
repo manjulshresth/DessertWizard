@@ -17,9 +17,8 @@ import SwiftUI
     
     let columns : [GridItem] = [GridItem(.flexible(), spacing: 0)]
     
-    func getRecipe(forMealID mealID: String){
+    func getRecipe(forMealID mealID: String) async{
         isLoading = true
-        Task{
             do {
                 recepie = try await NetworkManager.shared.getDessertRecipe(forMealID: mealID)
                 isLoading = false
@@ -43,6 +42,5 @@ import SwiftUI
                 isLoading = false
                 showError = true
             }
-        }
     }
 }

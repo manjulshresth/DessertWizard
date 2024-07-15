@@ -20,7 +20,7 @@ struct MealDetail: View {
                     ProgressView()
                         .progressViewStyle(.circular)
                         .task {
-                            viewModel.getRecipe(forMealID: meal.idMeal)
+                            await viewModel.getRecipe(forMealID: meal.idMeal)
                         }
                 }
                 
